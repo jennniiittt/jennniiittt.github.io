@@ -10,19 +10,17 @@ body.dark {
   --card: #1e293b;
 }
 
+/* dark mode */
+body.dark .navbar {
+  background: rgba(15, 23, 42, 0.7);
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: var(--bg);
   color: var(--text);
   transition: 0.3s;
-}
-
-/* HEADER */
-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 40px;
 }
 
 #theme-toggle {
@@ -44,7 +42,7 @@ header {
   margin: 80px auto;
 }
 
-.card {
+.project-card {
   background: var(--card);
   padding: 20px;
   margin-bottom: 20px;
@@ -52,7 +50,7 @@ header {
   transition: transform 0.2s;
 }
 
-.card:hover {
+.project-card:hover {
   transform: translateY(-5px);
 }
 
@@ -78,9 +76,10 @@ nav a {
 }
 
 section {
-  max-width: 800px;
-  margin: 80px auto;
+  max-width: 850px;
+  margin: 60px auto;
   padding: 0 20px;
+  scroll-margin-top: 100px;
 }
 
 h2 {
@@ -91,10 +90,20 @@ h2 {
 }
 
 .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 50px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 40px;
+
+  padding: 15px 40px;
+
+  backdrop-filter: saturate(180%) blur(100px);
+  background: rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
 /* LEFT (logo) */
@@ -108,6 +117,17 @@ h2 {
 
 .logo-icon {
   margin-right: 8px;
+  font-size: 30px;
+}
+
+.logo-text {
+  font-size: 30px;
+  font-weight: 700;  /* bold */
+  letter-spacing: 0.7px;
+}
+
+.logo:hover {
+  opacity: 0.7;
 }
 
 /* CENTER (nav links) */
@@ -142,4 +162,42 @@ h2 {
 /* TEXT */
 .about-text {
   max-width: 600px;
+}
+
+.skills-subtitle {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+/* GRID LAYOUT */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 13px;
+}
+
+/* CARD STYLE */
+.skill-card {
+  background: var(--card);
+  padding: 17px;
+  border-radius: 7px;
+  transition: all 0.25s ease;
+  cursor: default;
+}
+
+/* TITLE */
+.skill-card h4 {
+  margin-bottom: 7px;
+}
+
+/* HOVER EFFECT */
+.skill-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* DARK MODE SHADOW */
+body.dark .skill-card:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
