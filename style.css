@@ -65,7 +65,6 @@ body {
   border-radius: 10px;
   transition: transform 0.2s;
   overflow: all 0.25s ease;
-  
 }
 
 /* IMAGE */
@@ -252,7 +251,6 @@ ul {
   border-radius: 7px;
   transition: all 0.25s ease;
   cursor: default;
-  text-align: center;
 }
 
 /* ICON */
